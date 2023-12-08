@@ -13,25 +13,57 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`zipFile(...)`](#zipfile)
+* [`unzip(...)`](#unzip)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### zipFile(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+zipFile(options: ZipFileOptions) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+| Param         | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code><a href="#zipfileoptions">ZipFileOptions</a></code> |
 
 --------------------
+
+
+### unzip(...)
+
+```typescript
+unzip(options: UnzipOptions) => Promise<void>
+```
+
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code><a href="#unzipoptions">UnzipOptions</a></code> |
+
+--------------------
+
+
+### Interfaces
+
+
+#### ZipFileOptions
+
+| Prop      | Type                |
+| --------- | ------------------- |
+| **`src`** | <code>string</code> |
+| **`zip`** | <code>string</code> |
+
+
+#### UnzipOptions
+
+| Prop       | Type                |
+| ---------- | ------------------- |
+| **`src`**  | <code>string</code> |
+| **`dest`** | <code>string</code> |
 
 </docgen-api>
