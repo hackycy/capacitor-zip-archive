@@ -1,6 +1,6 @@
 # capacitor-zip-archive
 
-Zip archive utility for capacitor
+📱 Zip archive utility for capacitor
 
 ## Install
 
@@ -13,7 +13,7 @@ npx cap sync
 
 <docgen-index>
 
-* [`zipFile(...)`](#zipfile)
+* [`zip(...)`](#zip)
 * [`unzip(...)`](#unzip)
 * [Interfaces](#interfaces)
 
@@ -22,10 +22,10 @@ npx cap sync
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### zipFile(...)
+### zip(...)
 
 ```typescript
-zipFile(options: ZipFileOptions) => Promise<void>
+zip(options: ZipFileOptions) => Promise<void>
 ```
 
 | Param         | Type                                                      |
@@ -53,17 +53,22 @@ unzip(options: UnzipOptions) => Promise<void>
 
 #### ZipFileOptions
 
-| Prop      | Type                |
-| --------- | ------------------- |
-| **`src`** | <code>string</code> |
-| **`zip`** | <code>string</code> |
+| Prop               | Type                  | Description               |
+| ------------------ | --------------------- | ------------------------- |
+| **`srcFilePaths`** | <code>string[]</code> | The paths of source files |
+| **`zipFilePath`**  | <code>string</code>   | The path of ZIP file      |
 
 
 #### UnzipOptions
 
-| Prop       | Type                |
-| ---------- | ------------------- |
-| **`src`**  | <code>string</code> |
-| **`dest`** | <code>string</code> |
+| Prop              | Type                | Description                       |
+| ----------------- | ------------------- | --------------------------------- |
+| **`zipFilePath`** | <code>string</code> | The path of ZIP file              |
+| **`destDirPath`** | <code>string</code> | The path of destination directory |
 
 </docgen-api>
+
+# Thanks
+
+- [ZipArchive](https://github.com/ZipArchive/ZipArchive)
+- [AndroidUtilCode](https://github.com/Blankj/AndroidUtilCode)

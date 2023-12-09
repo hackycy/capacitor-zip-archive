@@ -5,7 +5,6 @@ import android.content.res.AssetFileDescriptor;
 import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -64,8 +63,7 @@ public class FileUtils {
                 if (afd == null) return false;
                 try {
                     afd.close();
-                } catch (IOException ignore) {
-                }
+                } catch (IOException ignore) {}
             } catch (FileNotFoundException e) {
                 return false;
             }
@@ -121,5 +119,4 @@ public class FileUtils {
             return false;
         }
     }
-
 }
