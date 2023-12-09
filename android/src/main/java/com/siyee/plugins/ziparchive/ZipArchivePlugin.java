@@ -8,7 +8,7 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-import java.io.IOException;
+import java.util.List;
 
 @CapacitorPlugin(name = "ZipArchive")
 public class ZipArchivePlugin extends Plugin {
@@ -34,27 +34,27 @@ public class ZipArchivePlugin extends Plugin {
     }
 
     @PluginMethod
-    public void zipFile(PluginCall call) {
-        String src = call.getString("src");
-        String zip = call.getString("zip");
-
+    public void zip(PluginCall call) {
         try {
-            ZipUtils.zipFile(src, zip);
+            String zipFilePath = call.getString("zipFilePath");
+            List<String> srcFilePaths = call.getArray("srcFilePaths").toList();
+
+            ZipUtils.zipFiles(srcFilePaths, zipFilePath);
             call.resolve();
-        } catch (IOException e) {
+        } catch (Exception e) {
             call.reject(e.getMessage());
         }
     }
 
     @PluginMethod
     public void unzip(PluginCall call) {
-        String src = call.getString("src");
-        String dest = call.getString("dest");
-
         try {
-            ZipUtils.unzipFile(src, dest);
+            String zipFilePath = call.getString("zipFilePath");
+            String destDirPath = call.getString("destDirPath");
+
+            ZipUtils.unzipFile(zipFilePath, destDirPath);
             call.resolve();
-        } catch (IOException e) {
+        } catch (Exception e) {
             call.reject(e.getMessage());
         }
     }
