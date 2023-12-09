@@ -1,5 +1,11 @@
 # capacitor-zip-archive
 
+<p>
+  <a href="https://www.npmjs.com/package/capacitor-zip-archive">
+    <img src="https://img.shields.io/npm/v/capacitor-zip-archive.svg?sanitize=true" alt="Version" />
+  </a>
+</p>
+
 📱 Zip archive utility for capacitor
 
 ## Install
